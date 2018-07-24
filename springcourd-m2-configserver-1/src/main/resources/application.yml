@@ -1,0 +1,26 @@
+---
+
+server:
+  port: 8888
+security:
+  basic:
+    enabled: true
+  user:
+    name: test
+    password: test
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/katlamah/spring-cloudconfig
+          search-paths:
+            - 'station*'
+          repos:
+            perf:
+              pattern:
+                - "*/perf"
+              uri: https://github.com/katlamah/spring-cloudconfig-test
+              search-paths:
+                - 'station*'
+              
